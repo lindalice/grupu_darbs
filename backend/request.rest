@@ -1,0 +1,100 @@
+// Create a user
+POST http://localhost:5001/users
+Content-Type: application/json
+
+{
+    "name": "LindaAdmin",
+    "email": "linndalice@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+
+//ja nebusi ielogojies no admin tad sito neredzes
+###
+// get All Users
+GET http://localhost:5001/users
+
+###
+//Get Single User
+GET http://localhost:5001/users/47bdcadf-5962-4b6f-ac2a-a01fe69ffa56
+
+###
+// Udpdate a user
+PATCH http://localhost:5001/users/47bdcadf-5962-4b6f-ac2a-a01fe69ffa56
+Content-Type: application/json
+
+{
+    "name": "Linda 222",
+    "email": "licelin21@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "admin"
+}
+
+###
+// delete a user
+DELETE http://localhost:5001/users/8ab56214-3270-4b70-8835-0dac1429f671
+
+###
+// Login User
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "licelin21@gmail.com",
+    "password": "123456"
+}
+// Login Admin
+###
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "linndalice@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5001/me
+
+###
+//Logout
+DELETE http://localhost:5001/logout
+//-----------------------------
+###
+// Get All Products
+GET http://localhost:5001/products
+
+###
+// Get Single Product
+GET http://localhost:5001/products/4f6a59cc-362d-4713-9ca5-4265842b59f8
+
+###
+// POST Data Product
+POST http://localhost:5001/products
+Content-Type: application/json
+
+{
+    "name": "Produ",
+    "price": 111
+}
+
+//admins redz visus produktus, ari user
+//user redz tikai savus produktus
+
+###
+// Update Product
+PATCH http://localhost:5001/products/4f6a59cc-362d-4713-9ca5-4265842b59f8
+Content-Type: application/json
+
+{
+    "name": "Product update",
+    "price": 974
+}
+
+###
+// Delete product
+DELETE http://localhost:5001/products/68db295a-a171-4c2b-b038-c7fed7af187d
+//user var izdzest TIKAI savus
+//Admin visus - gan savus, gan user produktus
