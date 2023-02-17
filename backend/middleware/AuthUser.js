@@ -9,7 +9,7 @@ export const verifyUser = async (req, res, next) =>{
             uuid: req.session.userId
         }
     });
-    if(!user) return res.status(404).json({msg: "Lietotājs nav atrasts"});
+    if(!user) return res.status(404).json({msg: "Lietotājs  nav atrasts"});
     req.userId = user.id;
     req.role = user.role; 
     next();
